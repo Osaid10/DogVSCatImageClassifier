@@ -1,5 +1,6 @@
 this is the readme fiole for the project "Dog vs Cat Image classifier"
 this model was selected on kaggle 
+Since the dataset is too big I cant upload it on GitHub
 the link for the dataset is down below:
 https://www.kaggle.com/competitions/dogs-vs-cats/data?select=test1.zip 
 
