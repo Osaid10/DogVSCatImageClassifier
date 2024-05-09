@@ -6,3 +6,7 @@ from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import random
 import os
+Image_Width=128
+Image_Height=128
+Image_Size=(Image_Width,Image_Height)
+Image_Channels=3
