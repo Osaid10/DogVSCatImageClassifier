@@ -120,3 +120,4 @@ history = model.fit_generator(
     steps_per_epoch=total_train//batch_size,
     callbacks=callbacks
 )
+model.save("model1_catsVSdogs_10epoch.h5")
