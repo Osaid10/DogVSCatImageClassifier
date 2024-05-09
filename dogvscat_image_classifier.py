@@ -155,3 +155,36 @@ label_map = dict((v,k) for k,v in train_generator.class_indices.items())
 test_df['category'] = test_df['category'].replace(label_map)
 
 test_df['category'] = test_df['category'].replace({ 'dog': 1, 'cat': 0 })
+import os
+import numpy as np
+import pandas as pd
+from keras.preprocessing.image import ImageDataGenerator, load_img
+import matplotlib.pyplot as plt
+
+# Load filenames
+test_dir = "E:/Study/GIKI BAI Course Material/Fourth Semester BAI/AI202/Osaid/test1/test1"
+test_filenames = sorted(os.listdir(test_dir))
+
+# Create DataFrame
+test_df = pd.DataFrame({'filename': test_filenames})
+
+# Sample of test data
+sample_test = test_df.head(18)
+
+# Function to display images with filenames
+def display_images(sample_test):
+    plt.figure(figsize=(12, 24))
+    for index, row in sample_test.iterrows():
+        filename = row['filename']
+        img_path = os.path.join(test_dir, filename)
+        img = load_img(img_path, target_size=Image_Size)
+        plt.subplot(6, 3, index + 1)
+        plt.imshow(img)
+        plt.title(filename)
+        plt.axis('off')
+        plt.xlabel(filename)  # Adding filename as xlabel
+    plt.tight_layout()
+    plt.show()
+
+# Display sample test images with filenames
+display_images(sample_test)
