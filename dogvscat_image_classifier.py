@@ -111,3 +111,12 @@ test_generator = train_datagen.flow_from_dataframe(train_df,
                                                  batch_size=batch_size)
 
 
+epochs=10
+history = model.fit_generator(
+    train_generator, 
+    epochs=epochs,
+    validation_data=validation_generator,
+    validation_steps=total_validate//batch_size,
+    steps_per_epoch=total_train//batch_size,
+    callbacks=callbacks
+)
