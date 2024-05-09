@@ -125,3 +125,21 @@ train_df, validate_df = train_test_split(df, test_size=0.20, random_state=42)
 # Step 4: Check train and validation sets
 print("Number of training samples:", len(train_df))
 print("Number of validation samples:", len(validate_df))
+test_df = pd.DataFrame({'filename': os.listdir("E:/Study/GIKI BAI Course Material/Fourth Semester BAI/AI202/Osaid/test1/test1")})
+
+print("Number of test samples:", len(test_df))
+
+test_generator = test_datagen.flow_from_dataframe(
+    test_df,
+    directory="E:/Study/GIKI BAI Course Material/Fourth Semester BAI/AI202/Osaid/test1/test1",
+    x_col='filename',
+    y_col=None,
+    class_mode=None,
+    target_size=Image_Size,
+    batch_size=batch_size,
+    shuffle=False
+)
+
+# Step 9: Check predictions
+nb_samples = test_df.shape[0]
+print("Number of test samples for predictions:", nb_samples)
