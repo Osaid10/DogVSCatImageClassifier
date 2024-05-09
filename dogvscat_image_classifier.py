@@ -121,3 +121,4 @@ history = model.fit_generator(
     callbacks=callbacks
 )
 model.save("model1_catsVSdogs_10epoch.h5")
+train_df, validate_df = train_test_split(df, test_size=0.20, random_state=42)
