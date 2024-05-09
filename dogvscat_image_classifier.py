@@ -122,3 +122,6 @@ history = model.fit_generator(
 )
 model.save("model1_catsVSdogs_10epoch.h5")
 train_df, validate_df = train_test_split(df, test_size=0.20, random_state=42)
+# Step 4: Check train and validation sets
+print("Number of training samples:", len(train_df))
+print("Number of validation samples:", len(validate_df))
