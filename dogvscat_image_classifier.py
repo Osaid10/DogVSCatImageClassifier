@@ -143,3 +143,8 @@ test_generator = test_datagen.flow_from_dataframe(
 # Step 9: Check predictions
 nb_samples = test_df.shape[0]
 print("Number of test samples for predictions:", nb_samples)
+test_filenames = os.listdir("E:\Study\GIKI BAI Course Material\Fourth Semester BAI\AI202\Osaid\\test1\\test1")
+test_df = pd.DataFrame({
+    'filename': test_filenames
+})
+nb_samples = test_df.shape[0]
