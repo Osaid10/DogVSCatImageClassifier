@@ -149,3 +149,9 @@ test_df = pd.DataFrame({
 })
 nb_samples = test_df.shape[0]
 predict = model.predict_generator(test_generator, steps=np.ceil(nb_samples/batch_size))\
+test_df['category'] = np.argmax(predict, axis=-1)
+
+label_map = dict((v,k) for k,v in train_generator.class_indices.items())
+test_df['category'] = test_df['category'].replace(label_map)
+
+test_df['category'] = test_df['category'].replace({ 'dog': 1, 'cat': 0 })
