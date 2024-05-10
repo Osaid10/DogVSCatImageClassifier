@@ -113,7 +113,9 @@ test_generator = train_datagen.flow_from_dataframe(train_df,
                                                  batch_size=batch_size)
 
 
+
 epochs=10
+pdb.set_trace()
 history = model.fit_generator(
     train_generator, 
     epochs=epochs,
