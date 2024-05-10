@@ -53,7 +53,7 @@ model.add(Dense(512,activation='relu'))
 model.add(BatchNormalization())
 model.add(Dropout(0.5))
 model.add(Dense(2,activation='softmax'))
-
+pdb.set_trace()
 model.compile(loss='categorical_crossentropy',
   optimizer='rmsprop',metrics=['accuracy'])
 
