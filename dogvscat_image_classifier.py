@@ -13,7 +13,7 @@ Image_Height=128
 Image_Size=(Image_Width,Image_Height)
 Image_Channels=3
 filenames=os.listdir("E:\Study\GIKI BAI Course Material\Fourth Semester BAI\AI202\Osaid\\train\\train")
-
+pdb.set_trace()
 categories=[]
 for f_name in filenames:
     category=f_name.split('.')[0]
